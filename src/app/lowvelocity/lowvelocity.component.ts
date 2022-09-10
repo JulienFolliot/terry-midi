@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
+import { Midi, MidiJSON } from '@tonejs/midi'
 
 @Component({
   selector: 'app-lowvelocity',
@@ -10,6 +10,7 @@ export class LowVelocityComponent implements OnInit {
 
   isLoading = false;
   fileName = '';
+  workingMidiFile : Midi = new Midi();
 
   constructor() { }
 
@@ -25,11 +26,26 @@ export class LowVelocityComponent implements OnInit {
       if (file) {
   
           this.fileName = file.name;
-  
+
+          
           const formData = new FormData();
-  
+          
           formData.append("thumbnail", file);
-  
+
+          const reader = new FileReader();
+          reader.onload = (evt: any) => {
+            const midiFileAsUrl = evt.target.result;
+            Midi.fromUrl(midiFileAsUrl).then(midiFile => {
+
+              this.workingMidiFile = midiFile.clone();
+
+              console.log("Midi file duration", midiFile.duration);
+            });
+
+          };
+          reader.readAsDataURL(file);
+          
+          
       }
     }
 }
