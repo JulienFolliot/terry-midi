@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "terry-midi"
+  "defaultProject": "terry-midi",
+  "cli": {
+    "analytics": false
+  }
 }
