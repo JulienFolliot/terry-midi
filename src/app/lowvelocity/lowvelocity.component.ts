@@ -8,8 +8,8 @@ import { finalize } from 'rxjs/operators';
 })
 export class LowVelocityComponent implements OnInit {
 
-  quote: string | undefined;
   isLoading = false;
+  fileName = '';
 
   constructor() { }
 
@@ -17,4 +17,20 @@ export class LowVelocityComponent implements OnInit {
     this.isLoading = false;
   }
 
+  onFileSelected(event: any) {
+
+    if (event != null) {
+      const file:File = event.target.files[0];
+  
+      if (file) {
+  
+          this.fileName = file.name;
+  
+          const formData = new FormData();
+  
+          formData.append("thumbnail", file);
+  
+      }
+    }
+}
 }

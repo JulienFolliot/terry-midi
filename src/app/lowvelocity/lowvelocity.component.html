@@ -11,7 +11,18 @@
           <li>Cliquer sur "Enregistrer une copie" et voilà !</li>
         </ul>
       </mat-card-subtitle>
-      
+      <input type="file" class="file-input" accept="audio/midi"
+            (change)="onFileSelected($event)" #fileUpload>
+
+      <div class="file-upload">
+
+        {{fileName || "Cliquez ici pour ajouter un fichier MIDI"}}
+
+          <button mat-mini-fab color="primary" class="upload-btn"
+            (click)="fileUpload.click()">
+              <mat-icon>attach_file</mat-icon>
+          </button>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
