@@ -1,0 +1,41 @@
+{
+  "generator-ngx-rocket": {
+    "version": "11.0.0",
+    "props": {
+      "location": "path",
+      "strict": true,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "Terry-Midi",
+      "target": [
+        "web"
+      ],
+      "ui": "material",
+      "layout": "side-menu",
+      "features": [],
+      "languages": [
+        "fr-FR"
+      ],
+      "tools": [
+        "hads"
+      ],
+      "utility": [
+        "lodash",
+        "moment"
+      ],
+      "deploy": "netlify",
+      "projectName": "terry-midi",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": [],
+      "pwa": false,
+      "auth": false,
+      "lazy": false,
+      "e2e": false,
+      "cypress": false,
+      "angulartics": false
+    }
+  }
+}
