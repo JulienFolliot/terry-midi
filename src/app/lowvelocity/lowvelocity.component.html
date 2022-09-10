@@ -4,12 +4,6 @@
       <mat-card-title translate>Low Velocity Filter</mat-card-title>
       <mat-card-subtitle>
         <p translate>Ce module sert à supprimer des notes MIDI dont la Velocity est en dessous d'un certain seuil</p>
-        <p translate>Pour se faire, suivez les étapes suivantes&nbsp;:</p>
-        <ul>
-          <li>Sélectionez un fichier *.mid en appuyant sur le bouton "Ajouter un fichier"</li>
-          <li>Indiquez le seuil mini en dessous duquel les notes seront "Mute"</li>
-          <li>Cliquer sur "Enregistrer une copie" et voilà !</li>
-        </ul>
       </mat-card-subtitle>
       <input type="file" class="file-input" accept="audio/midi"
             (change)="onFileSelected($event)" #fileUpload>
@@ -24,7 +18,8 @@
           </button>
       </div>
 
-      <div>Duration : {{workingMidiFile?.duration || "Pas encore de fichier"}}</div>
+      <div>Au-dessus de 50% de Velocité : {{upperVelocityCount}}</div>
+      <div>En-dessous de 50% de Velocité : {{lowerVelocityCount}}</div>
 
     </mat-card-content>
   </mat-card>
