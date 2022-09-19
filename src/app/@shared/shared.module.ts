@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MaterialModule } from '@app/material.module';
 import { LoaderComponent } from './loader/loader.component';
+import { MidiViewerComponent } from './midi-viewer/midi-viewer.component';
 
 @NgModule({
   imports: [
@@ -14,10 +15,12 @@ import { LoaderComponent } from './loader/loader.component';
     CommonModule
   ],
   declarations: [
-    LoaderComponent
+    LoaderComponent,
+    MidiViewerComponent
   ],
   exports: [
-    LoaderComponent
+    LoaderComponent,
+    MidiViewerComponent
   ]
 })
 export class SharedModule { }

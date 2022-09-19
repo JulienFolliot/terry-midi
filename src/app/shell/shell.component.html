@@ -16,6 +16,10 @@
             <span translate>Home</span>
           </a>
           <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/low-velocity" routerLinkActive="active" (click)="isMobile && sidenav.close()">
+            <span translate>Low Velocity Filter</span>
+          </a>
+          <mat-divider></mat-divider>
           <a mat-list-item routerLink="/about" routerLinkActive="active" (click)="isMobile && sidenav.close()">
             <span translate>About</span>
           </a>
